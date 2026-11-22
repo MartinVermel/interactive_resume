@@ -5,7 +5,7 @@ _Last updated: 2026-11-22_
 ## What it is
 Personal interactive resume of Martin Vermel, built with Flutter (web first, also android/ios/macos).
 Dark monochrome editorial design; skill colors used only as small accents.
-Not a git repository yet.
+Git repo: https://github.com/MartinVermel/interactive_resume (public, branch main, created 2026-11-22). The 3 project repos are public too.
 
 ## Stack
 - Flutter SDK at `~/flutter/bin/flutter` (not on PATH — call it by full path).
