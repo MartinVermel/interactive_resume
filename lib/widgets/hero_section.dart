@@ -192,6 +192,7 @@ class _HeroPictures extends StatelessWidget {
                     path: Profile.heroSmallImage,
                     radius: 14,
                     label: 'hero_small.jpg',
+                    grayscale: false,
                   ),
                 )
                     .animate()
@@ -218,17 +219,22 @@ class _HeroPictures extends StatelessWidget {
   }
 }
 
-/// Black & white picture that fades to color on hover.
+/// Picture that is black & white and fades to color on hover
+/// (or always in color when [grayscale] is false).
 class _Picture extends StatefulWidget {
   const _Picture({
     required this.path,
     required this.radius,
     required this.label,
+    this.grayscale = true,
   });
 
   final String path;
   final double radius;
   final String label;
+
+  /// When false, the picture always shows in full color.
+  final bool grayscale;
 
   @override
   State<_Picture> createState() => _PictureState();
@@ -256,7 +262,7 @@ class _PictureState extends State<_Picture> {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(widget.radius),
         child: TweenAnimationBuilder<double>(
-          tween: Tween(end: _hover ? 1 : 0),
+          tween: Tween(end: (_hover || !widget.grayscale) ? 1 : 0),
           duration: const Duration(milliseconds: 600),
           curve: Curves.easeOut,
           builder: (context, s, child) => ColorFiltered(
