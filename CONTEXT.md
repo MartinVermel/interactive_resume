@@ -12,7 +12,7 @@ Git repo: https://github.com/MartinVermel/interactive_resume (public, branch mai
 - Dart `>=3.5.0 <4.0.0`.
 - Deps: `material_ui` (used instead of `package:flutter/material.dart` imports), `flutter_animate`, `url_launcher`.
 - Fonts (assets/fonts): SpaceGrotesk (display), JetBrainsMono (mono labels).
-- Images: `assets/images/hero_main.jpg` (LinkedIn photo), `assets/images/hero_small.jpg` (center guy with burgundy tie, cropped from group photo).
+- Images: `assets/images/hero_main.jpg` (LinkedIn photo), `assets/images/hero_small.jpg` (center guy with burgundy tie, wide crop of group photo on black).
 
 ## Structure
 ```
@@ -27,7 +27,7 @@ lib/
   pages/resume_page.dart  Page layout + private _SectionHeader(title, count, optional hint)
   widgets/
     intro_section.dart    Giant intro title
-    hero_section.dart     Hero (greeting, tagline with **bold** markup, images B&W -> color on hover)
+    hero_section.dart     Hero (greeting, tagline with **bold** markup, images in full color)
     skill_carousel.dart   Infinite 3D coverflow, flip cards, autoplay, keyboard
     skill_card.dart
     project_list.dart     Editorial hoverable rows, open repo in new tab

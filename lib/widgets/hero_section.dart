@@ -4,7 +4,7 @@ import 'package:material_ui/material_ui.dart';
 import '../data/profile.dart';
 import '../theme.dart';
 
-/// "Hi, I'm Name." on the left, big B&W picture on the right,
+/// "Hi, I'm Name." on the left, big picture on the right,
 /// smaller picture overlapping its bottom-left corner.
 class HeroSection extends StatelessWidget {
   const HeroSection({super.key, this.onCtaPressed});
@@ -192,7 +192,6 @@ class _HeroPictures extends StatelessWidget {
                     path: Profile.heroSmallImage,
                     radius: 14,
                     label: 'hero_small.jpg',
-                    grayscale: false,
                   ),
                 )
                     .animate()
@@ -219,79 +218,43 @@ class _HeroPictures extends StatelessWidget {
   }
 }
 
-/// Picture that is black & white and fades to color on hover
-/// (or always in color when [grayscale] is false).
-class _Picture extends StatefulWidget {
+/// Rounded picture with a placeholder if the asset is missing.
+class _Picture extends StatelessWidget {
   const _Picture({
     required this.path,
     required this.radius,
     required this.label,
-    this.grayscale = true,
   });
 
   final String path;
   final double radius;
   final String label;
 
-  /// When false, the picture always shows in full color.
-  final bool grayscale;
-
-  @override
-  State<_Picture> createState() => _PictureState();
-}
-
-class _PictureState extends State<_Picture> {
-  bool _hover = false;
-
-  static List<double> _saturation(double s) {
-    const r = 0.2126, g = 0.7152, b = 0.0722;
-    final i = 1 - s;
-    return [
-      r * i + s, g * i, b * i, 0, 0, //
-      r * i, g * i + s, b * i, 0, 0, //
-      r * i, g * i, b * i + s, 0, 0, //
-      0, 0, 0, 1, 0,
-    ];
-  }
-
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) => setState(() => _hover = true),
-      onExit: (_) => setState(() => _hover = false),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(widget.radius),
-        child: TweenAnimationBuilder<double>(
-          tween: Tween(end: (_hover || !widget.grayscale) ? 1 : 0),
-          duration: const Duration(milliseconds: 600),
-          curve: Curves.easeOut,
-          builder: (context, s, child) => ColorFiltered(
-            colorFilter: ColorFilter.matrix(_saturation(s)),
-            child: child,
-          ),
-          child: Image.asset(
-            widget.path,
-            fit: BoxFit.cover,
-            width: double.infinity,
-            height: double.infinity,
-            errorBuilder: (context, _, __) => Container(
-              color: AppColors.surfaceHi,
-              alignment: Alignment.center,
-              padding: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Icon(Icons.image_outlined,
-                      size: 32, color: AppColors.faint),
-                  const SizedBox(height: 8),
-                  Text(
-                    'assets/images/${widget.label}',
-                    textAlign: TextAlign.center,
-                    style: monoStyle(size: 10, color: AppColors.faint),
-                  ),
-                ],
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(radius),
+      child: Image.asset(
+        path,
+        fit: BoxFit.cover,
+        width: double.infinity,
+        height: double.infinity,
+        errorBuilder: (context, _, __) => Container(
+          color: AppColors.surfaceHi,
+          alignment: Alignment.center,
+          padding: const EdgeInsets.all(12),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.image_outlined,
+                  size: 32, color: AppColors.faint),
+              const SizedBox(height: 8),
+              Text(
+                'assets/images/$label',
+                textAlign: TextAlign.center,
+                style: monoStyle(size: 10, color: AppColors.faint),
               ),
-            ),
+            ],
           ),
         ),
       ),

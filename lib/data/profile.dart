@@ -20,7 +20,7 @@ class Profile {
   static const currentlyLine2 = 'Starbourg';
 
   /// Drop your pictures in assets/images/ with these names (or change paths).
-  /// They are shown in black & white, in color on hover.
+  /// Shown in full color.
   static const heroImage = 'assets/images/hero_main.jpg'; // big, right
   static const heroSmallImage =
       'assets/images/hero_small.jpg'; // small, bottom-left
