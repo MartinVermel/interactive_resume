@@ -61,7 +61,7 @@ Titles/descriptions written by Claude from repo descriptions — user may reword
 - Replace placeholders in `profile.dart` (name, title, tagline, email, currently line).
 - Hero images done 2026-11-22 (hero_main = LinkedIn photo, hero_small = cropped group photo).
 - Visual check of Projects section in browser (`~/flutter/bin/flutter run -d chrome`) — not done yet.
-- Deploy: `flutter build web --release` (GitHub Pages needs `--base-href /<repo>/`).
+- Deployed 2026-11-22 to https://martinvermel.github.io/interactive_resume/ (gh-pages branch, built locally). Redeploy: `./scripts/deploy_pages.sh`. No Actions: gh token lacks `workflow` scope.
 
 ## Verify
 ```sh
