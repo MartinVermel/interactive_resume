@@ -107,18 +107,18 @@ const List<Skill> skills = [
     icon: Icons.inventory_2_rounded,
     color: Color(0xFF1E9BD7),
     description:
-        'Every Flutter project ships with a multi-stage Dockerfile: a Flutter '
-        'image builds the web release, then a small nginx:alpine image serves '
-        'it. nginx is tuned for single-page apps (fallback to index.html), '
-        'gzip, and long-term caching of hashed assets. API keys are passed as '
-        'build args and docker compose starts each app on its own port.',
+        'I containerise apps so they run the same everywhere: multi-stage '
+        'Dockerfiles that keep production images small, docker compose to '
+        'run several services together, and environment variables or build '
+        'args to keep secrets out of the code. Static front-ends are served '
+        'by nginx, tuned for caching and single-page routing.',
     highlights: [
       'Dockerfile',
       'Multi-stage builds',
       'docker compose',
       'nginx',
-      'Build args',
-      'Caching',
+      'Environment config',
+      'Image optimisation',
     ],
   ),
   Skill(
