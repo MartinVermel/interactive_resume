@@ -102,23 +102,40 @@ const List<Skill> skills = [
     ],
   ),
   Skill(
-    title: 'Git & DevOps',
-    subtitle: 'Tooling',
+    title: 'Docker',
+    subtitle: 'Containers · nginx',
+    icon: Icons.inventory_2_rounded,
+    color: Color(0xFF1E9BD7),
+    description:
+        'Every Flutter project ships with a multi-stage Dockerfile: a Flutter '
+        'image builds the web release, then a small nginx:alpine image serves '
+        'it. nginx is tuned for single-page apps (fallback to index.html), '
+        'gzip, and long-term caching of hashed assets. API keys are passed as '
+        'build args and docker compose starts each app on its own port.',
+    highlights: [
+      'Dockerfile',
+      'Multi-stage builds',
+      'docker compose',
+      'nginx',
+      'Build args',
+      'Caching',
+    ],
+  ),
+  Skill(
+    title: 'Git & GitHub',
+    subtitle: 'Version control',
     icon: Icons.merge_type_rounded,
     color: Color(0xFFC2364F),
     description:
         'Every project is versioned on GitHub with Conventional Commits '
-        '(feat, fix, build, docs, chore). Web builds are containerised with a '
-        'multi-stage Dockerfile (Flutter build, then nginx), started with '
-        'docker compose, and API keys are injected at build time with '
-        '--dart-define instead of being committed.',
+        '(feat, fix, build, docs, chore). Secrets stay out of the repo: API '
+        'keys are injected at build time with --dart-define. This resume is '
+        'itself deployed on GitHub Pages.',
     highlights: [
       'Git',
       'GitHub',
       'Conventional Commits',
-      'Docker',
-      'docker compose',
-      'nginx',
+      'GitHub Pages',
     ],
   ),
 ];
