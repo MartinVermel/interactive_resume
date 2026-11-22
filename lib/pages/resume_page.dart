@@ -122,7 +122,7 @@ class _ResumePageState extends State<ResumePage> {
                   key: _projectsKey,
                   padding: EdgeInsets.fromLTRB(pad, 160, pad, 40),
                   child: _SectionHeader(
-                    title: 'Projects',
+                    title: 'Flutter Projects',
                     count: projects.length,
                     hint: 'Open source on GitHub. Click a row to open it.',
                   ),

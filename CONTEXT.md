@@ -19,7 +19,7 @@ Git repo: https://github.com/MartinVermel/interactive_resume (public, branch mai
 lib/
   main.dart
   theme.dart              AppColors, AppFonts, monoStyle(), displayStyle(), pagePadding(), isWide() (>=900px)
-  models/skill.dart       Skill(title, subtitle, icon, color, level 0-1, description, highlights)
+  models/skill.dart       Skill(title, subtitle, icon, color, description, highlights) — level bar removed 2026-11-22
   models/project.dart     Project(title, description, url, tags)
   data/profile.dart       All resume text (static consts in class Profile) — still PLACEHOLDER values
   data/skills.dart        const List<Skill> skills — still PLACEHOLDER content
@@ -37,7 +37,7 @@ test/widget_test.dart     2 tests (header + carousel, wide hero layout)
 ```
 
 ## Page order (resume_page.dart)
-Intro → Hero (About) → Skills (carousel) → Projects → Contact/footer.
+Intro → Hero (About) → Skills (carousel) → Flutter Projects (section title; nav label stays "Projects") → Contact/footer.
 Nav items (top nav + footer EXPLORE): About, Skills, Projects, Contact — defined once in `_nav`.
 
 ## Projects (lib/data/projects.dart)

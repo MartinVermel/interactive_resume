@@ -207,8 +207,6 @@ class _CardFront extends StatelessWidget {
   final String counter;
   final bool isActive;
 
-  static const _segments = 10;
-
   @override
   Widget build(BuildContext context) {
     return _CardShell(
@@ -242,54 +240,6 @@ class _CardFront extends StatelessWidget {
           const SizedBox(height: 10),
           Text(skill.subtitle.toUpperCase(), style: monoStyle(size: 11)),
           const SizedBox(height: 28),
-          TweenAnimationBuilder<double>(
-            tween: Tween(begin: 0, end: isActive ? skill.level : 0),
-            duration: const Duration(milliseconds: 900),
-            curve: Curves.easeOutCubic,
-            builder: (context, value, _) {
-              final filled = (value * _segments).round();
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text('LEVEL', style: monoStyle(size: 10)),
-                      const Spacer(),
-                      Text(
-                        '${(value * 100).round()}%',
-                        style: monoStyle(
-                          size: 11,
-                          color: AppColors.text,
-                          weight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      for (var i = 0; i < _segments; i++) ...[
-                        if (i > 0) const SizedBox(width: 4),
-                        Expanded(
-                          child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 150),
-                            height: 6,
-                            decoration: BoxDecoration(
-                              color: i < filled
-                                  ? AppColors.text
-                                  : Colors.white.withValues(alpha: 0.08),
-                              borderRadius: BorderRadius.circular(2),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ],
-                  ),
-                ],
-              );
-            },
-          ),
-          const SizedBox(height: 22),
           AnimatedOpacity(
             opacity: isActive ? 1 : 0,
             duration: const Duration(milliseconds: 300),

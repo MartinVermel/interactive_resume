@@ -103,8 +103,7 @@ class _ProjectRowState extends State<_ProjectRow> {
       onExit: (_) => setState(() => _hover = false),
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
-        onTap: () =>
-            launchUrl(Uri.parse(p.url), webOnlyWindowName: '_blank'),
+        onTap: () => launchUrl(Uri.parse(p.url), webOnlyWindowName: '_blank'),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 250),
           padding: EdgeInsets.symmetric(
