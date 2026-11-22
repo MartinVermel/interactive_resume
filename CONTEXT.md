@@ -49,6 +49,7 @@ Nav items (top nav + footer EXPLORE): About, Skills, Projects, Contact — defin
 Titles/descriptions written by Claude from repo descriptions — user may reword.
 
 ## Decisions
+- 2026-11-22 Resume targets a Flutter job: keep intro title "FLUTTER DEVELOPER" AND hero title "Full-Stack Developer" (user does more than Flutter). Do not unify them.
 - 2026-11-22 user removed: Skills hint ("Swipe, use ← →…"), ©year in intro bottom row, giant faded "YOUR." in footer, footer "Back to top ↑" link. Top-nav ↑ button kept.
 - **Data stays in Dart files, not JSON**: compile-time type checks, synchronous access (no FutureBuilder),
   `Icons.*`/`Color` stored directly, and icon tree-shaking keeps working (runtime IconData from JSON
