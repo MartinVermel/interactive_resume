@@ -37,4 +37,7 @@ class Profile {
   ];
 
   static const footerLine = 'See you around.';
+
+  /// Current year, shown in the footer copyright line.
+  static int get year => DateTime.now().year;
 }
