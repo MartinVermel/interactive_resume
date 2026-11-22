@@ -32,8 +32,8 @@ class Profile {
 
   /// (label, url)
   static const links = <(String, String)>[
-    ('LinkedIn', 'https://linkedin.com/in/you'),
-    ('GitHub', 'https://github.com/'),
+    ('LinkedIn', 'https://www.linkedin.com/in/martin-vermel'),
+    ('GitHub', 'https://github.com/MartinVermel'),
   ];
 
   static const footerLine = 'See you around.';

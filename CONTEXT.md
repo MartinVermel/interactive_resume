@@ -57,7 +57,7 @@ Titles/descriptions written by Claude from repo descriptions — user may reword
 - New content types follow the same pattern: model in `models/`, `// EDIT ME` const list in `data/`, widget in `widgets/`.
 
 ## TODO / open items
-- Replace placeholders in `profile.dart` (name, title, tagline, email, LinkedIn/GitHub links, currently line).
+- Replace placeholders in `profile.dart` (name, title, tagline, email, currently line).
 - Replace placeholder skills in `skills.dart` with real ones.
 - Hero images done 2026-11-22 (hero_main = LinkedIn photo, hero_small = cropped group photo).
 - Visual check of Projects section in browser (`~/flutter/bin/flutter run -d chrome`) — not done yet.
