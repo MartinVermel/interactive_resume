@@ -58,7 +58,6 @@ Titles/descriptions written by Claude from repo descriptions — user may reword
 
 ## TODO / open items
 - Replace placeholders in `profile.dart` (name, title, tagline, email, currently line).
-- Replace placeholder skills in `skills.dart` with real ones.
 - Hero images done 2026-11-22 (hero_main = LinkedIn photo, hero_small = cropped group photo).
 - Visual check of Projects section in browser (`~/flutter/bin/flutter run -d chrome`) — not done yet.
 - Deploy: `flutter build web --release` (GitHub Pages needs `--base-href /<repo>/`).
