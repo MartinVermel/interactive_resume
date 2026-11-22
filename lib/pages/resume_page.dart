@@ -27,6 +27,46 @@ class _ResumePageState extends State<ResumePage> {
   final _contactKey = GlobalKey();
   Color _accent = skills.isNotEmpty ? skills.first.color : Colors.white;
 
+  final _scroll = ScrollController();
+
+  /// Index in [_nav] of the section currently on screen (-1 = intro).
+  final _activeSection = ValueNotifier<int>(-1);
+
+  List<GlobalKey> get _sectionKeys =>
+      [_aboutKey, _skillsKey, _projectsKey, _contactKey];
+
+  @override
+  void initState() {
+    super.initState();
+    _scroll.addListener(_updateActiveSection);
+  }
+
+  @override
+  void dispose() {
+    _scroll.dispose();
+    _activeSection.dispose();
+    super.dispose();
+  }
+
+  /// A section is active once its top passes 40% of the viewport height.
+  /// At the very bottom of the page, the last section (Contact) is active.
+  void _updateActiveSection() {
+    final pos = _scroll.position;
+    var active = -1;
+    if (pos.pixels >= pos.maxScrollExtent - 4) {
+      active = _sectionKeys.length - 1;
+    } else {
+      final line = MediaQuery.sizeOf(context).height * 0.4;
+      for (var i = 0; i < _sectionKeys.length; i++) {
+        final box =
+            _sectionKeys[i].currentContext?.findRenderObject() as RenderBox?;
+        if (box == null || !box.attached) continue;
+        if (box.localToGlobal(Offset.zero).dy <= line) active = i;
+      }
+    }
+    _activeSection.value = active;
+  }
+
   void _onActiveChanged(Skill skill) {
     if (skill.color != _accent) setState(() => _accent = skill.color);
   }
@@ -79,6 +119,7 @@ class _ResumePageState extends State<ResumePage> {
             ),
           ),
           SingleChildScrollView(
+            controller: _scroll,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -143,7 +184,14 @@ class _ResumePageState extends State<ResumePage> {
             right: 0,
             child: SafeArea(
               child: Center(
-                child: TopNav(items: _nav, onTop: () => _scrollTo(_topKey)),
+                child: ValueListenableBuilder<int>(
+                  valueListenable: _activeSection,
+                  builder: (context, active, _) => TopNav(
+                    items: _nav,
+                    activeIndex: active,
+                    onTop: () => _scrollTo(_topKey),
+                  ),
+                ),
               ),
             ),
           ),

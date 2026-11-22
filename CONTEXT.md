@@ -38,7 +38,7 @@ test/widget_test.dart     2 tests (header + carousel, wide hero layout)
 
 ## Page order (resume_page.dart)
 Intro → Hero (About) → Skills (carousel) → Flutter Projects (section title; nav label stays "Projects") → Contact/footer.
-Nav items (top nav + footer EXPLORE): About, Skills, Projects, Contact — defined once in `_nav`.
+Nav items (top nav + footer EXPLORE): About, Skills, Projects, Contact — defined once in `_nav`. Top nav highlights the on-screen section in `accentText` (scroll-spy in resume_page `_updateActiveSection`, 40% viewport line).
 
 ## Projects (lib/data/projects.dart)
 | # | Title | URL |

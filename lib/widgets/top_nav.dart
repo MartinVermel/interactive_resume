@@ -8,10 +8,18 @@ import '../theme.dart';
 
 /// Floating glass pill navigation.
 class TopNav extends StatelessWidget {
-  const TopNav({super.key, required this.items, required this.onTop});
+  const TopNav({
+    super.key,
+    required this.items,
+    required this.onTop,
+    this.activeIndex = -1,
+  });
 
   /// (label, onTap)
   final List<(String, VoidCallback)> items;
+
+  /// Index in [items] of the section on screen, shown in blue (-1 = none).
+  final int activeIndex;
   final VoidCallback onTop;
 
   @override
@@ -48,12 +56,19 @@ class TopNav extends StatelessWidget {
               ),
               if (showLinks) ...[
                 const SizedBox(width: 20),
-                for (final (label, onTap) in items)
+                for (final (i, (label, onTap)) in items.indexed)
                   TextButton(
                     onPressed: onTap,
                     style: TextButton.styleFrom(
-                      foregroundColor: AppColors.muted,
-                      textStyle: monoStyle(size: 12),
+                      foregroundColor: i == activeIndex
+                          ? AppColors.accentText
+                          : AppColors.muted,
+                      textStyle: monoStyle(
+                        size: 12,
+                        weight: i == activeIndex
+                            ? FontWeight.w500
+                            : FontWeight.w400,
+                      ),
                     ),
                     child: Text(label.toUpperCase()),
                   ),
