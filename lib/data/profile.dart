@@ -1,7 +1,7 @@
 class Profile {
   static const firstName = 'Martin';
   static const name = 'Martin Vermel';
-  static const title = 'FullStack Developer';
+  static const title = 'Full-Stack Developer';
 
   // --- Intro (giant title at the top) ---------------------------------------
   static const introLines = ['FLUTTER', 'DEVELOPER'];
@@ -12,12 +12,12 @@ class Profile {
 
   /// Wrap words in **double stars** to make them bold/white.
   static const tagline =
-      'I dev **smooth, animated apps and Websites** with Flutter for **iOS, Android '
+      'I build **smooth, animated apps and websites** with Flutter for **iOS, Android '
       'and the web**, from first sketch to store release.';
 
   static const currentlyLabel = 'CURRENTLY';
   static const currentlyLine1 = 'Référent Pédagogique at Epitech';
-  static const currentlyLine2 = 'Starbourg';
+  static const currentlyLine2 = 'Strasbourg';
 
   /// Drop your pictures in assets/images/ with these names (or change paths).
   /// Shown in full color.
