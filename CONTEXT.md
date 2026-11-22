@@ -12,7 +12,7 @@ Git repo: https://github.com/MartinVermel/interactive_resume (public, branch mai
 - Dart `>=3.5.0 <4.0.0`.
 - Deps: `material_ui` (used instead of `package:flutter/material.dart` imports), `flutter_animate`, `url_launcher`.
 - Fonts (assets/fonts): SpaceGrotesk (display), JetBrainsMono (mono labels).
-- Images: `assets/images/hero_main.jpg` (LinkedIn photo), `assets/images/hero_small.jpg` (missing → placeholder box).
+- Images: `assets/images/hero_main.jpg` (LinkedIn photo), `assets/images/hero_small.jpg` (center guy with burgundy tie, cropped from group photo).
 
 ## Structure
 ```
@@ -59,7 +59,7 @@ Titles/descriptions written by Claude from repo descriptions — user may reword
 ## TODO / open items
 - Replace placeholders in `profile.dart` (name, title, tagline, email, LinkedIn/GitHub links, currently line).
 - Replace placeholder skills in `skills.dart` with real ones.
-- hero_main.jpg = LinkedIn photo (added 2026-11-22). Still missing: `assets/images/hero_small.jpg`.
+- Hero images done 2026-11-22 (hero_main = LinkedIn photo, hero_small = cropped group photo).
 - Visual check of Projects section in browser (`~/flutter/bin/flutter run -d chrome`) — not done yet.
 - Deploy: `flutter build web --release` (GitHub Pages needs `--base-href /<repo>/`).
 
