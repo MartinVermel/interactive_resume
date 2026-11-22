@@ -25,7 +25,18 @@ class ContactFooter extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Let's talk.", style: displayStyle(wide ? 96 : 56)),
+              Text.rich(
+                const TextSpan(
+                  text: "Let's talk",
+                  children: [
+                    TextSpan(
+                      text: '.',
+                      style: TextStyle(color: AppColors.accentText),
+                    ),
+                  ],
+                ),
+                style: displayStyle(wide ? 96 : 56),
+              ),
               const SizedBox(height: 20),
               ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 460),
@@ -197,7 +208,9 @@ class _HoverTextState extends State<_HoverText> {
 
   @override
   Widget build(BuildContext context) {
-    final color = _hover || widget.strong ? AppColors.text : AppColors.muted;
+    final color = _hover
+        ? AppColors.accentText
+        : (widget.strong ? AppColors.text : AppColors.muted);
     final base = widget.mono
         ? monoStyle(size: widget.size - 2, color: color)
         : TextStyle(
@@ -217,7 +230,7 @@ class _HoverTextState extends State<_HoverText> {
           duration: const Duration(milliseconds: 200),
           style: base.copyWith(
             decoration: _hover ? TextDecoration.underline : null,
-            decorationColor: AppColors.text,
+            decorationColor: AppColors.accentText,
           ),
           child: Text(widget.label),
         ),

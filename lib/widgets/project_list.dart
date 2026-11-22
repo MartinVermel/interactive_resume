@@ -86,13 +86,15 @@ class _ProjectRowState extends State<_ProjectRow> {
         height: 44,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: _hover ? AppColors.text : Colors.transparent,
-          border: Border.all(color: AppColors.line),
+          color: _hover ? AppColors.accent : Colors.transparent,
+          border: Border.all(
+            color: _hover ? AppColors.accentText : AppColors.line,
+          ),
         ),
         child: Icon(
           Icons.arrow_forward_rounded,
           size: 18,
-          color: _hover ? AppColors.bg : AppColors.muted,
+          color: _hover ? AppColors.text : AppColors.muted,
         ),
       ),
     );
@@ -120,7 +122,14 @@ class _ProjectRowState extends State<_ProjectRow> {
                   children: [
                     SizedBox(
                       width: 64,
-                      child: Text(number, style: monoStyle(size: 12)),
+                      child: Text(
+                        number,
+                        style: monoStyle(
+                          size: 12,
+                          color:
+                              _hover ? AppColors.accentText : AppColors.muted,
+                        ),
+                      ),
                     ),
                     Expanded(flex: 5, child: title),
                     const SizedBox(width: 32),
@@ -134,7 +143,14 @@ class _ProjectRowState extends State<_ProjectRow> {
                   children: [
                     Row(
                       children: [
-                        Text(number, style: monoStyle(size: 12)),
+                        Text(
+                          number,
+                          style: monoStyle(
+                            size: 12,
+                            color:
+                                _hover ? AppColors.accentText : AppColors.muted,
+                          ),
+                        ),
                         const Spacer(),
                         arrow,
                       ],

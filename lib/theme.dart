@@ -10,6 +10,14 @@ class AppColors {
   static const text = Color(0xFFF2F2F0);
   static const muted = Color(0xFF8E8E8E);
   static const faint = Color(0xFF4A4A4A);
+
+  /// Blue sampled from the hero photo background. Use for fills/glows only:
+  /// it is too dark to read as text on [bg] (contrast 2.3:1).
+  static const accent = Color(0xFF1F4A92);
+
+  /// Lighter tint of [accent] (same hue) for text and small marks
+  /// (contrast 6.6:1 on [bg]).
+  static const accentText = Color(0xFF6C97E0);
 }
 
 class AppFonts {

@@ -167,7 +167,7 @@ class _TitleLine extends StatelessWidget {
             if (trailing != null) ...[
               const SizedBox(width: 18),
               Text(trailing!, style: symbol),
-              Text('_', style: symbol.copyWith(color: AppColors.text))
+              Text('_', style: symbol.copyWith(color: AppColors.accentText))
                   .animate(onPlay: (c) => c.repeat())
                   .fadeOut(delay: 500.ms, duration: 1.ms)
                   .then(delay: 500.ms)

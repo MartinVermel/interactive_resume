@@ -180,7 +180,7 @@ class _SectionHeader extends StatelessWidget {
             Text(title, style: displayStyle(wide ? 72 : 48)),
             const SizedBox(width: 10),
             Text('(${count.toString().padLeft(2, '0')})',
-                style: monoStyle(size: 14)),
+                style: monoStyle(size: 14, color: AppColors.accentText)),
           ],
         ),
         if (hint != null) Text(hint!, style: monoStyle(size: 11)),

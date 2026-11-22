@@ -4,7 +4,7 @@ _Last updated: 2026-11-22_
 
 ## What it is
 Personal interactive resume of Martin Vermel, built with Flutter (web first, also android/ios/macos).
-Dark monochrome editorial design; skill colors used only as small accents.
+Dark monochrome editorial design; skill colors used only as small accents. Blue accent from hero photo bg (2026-11-22): `AppColors.accent` #1F4A92 for fills, `AppColors.accentText` #6C97E0 for text.
 Git repo: https://github.com/MartinVermel/interactive_resume (public, branch main, created 2026-11-22). The 3 project repos are public too.
 
 ## Stack

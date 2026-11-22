@@ -47,8 +47,16 @@ class _HeroText extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(
-          '${Profile.greeting}\n${Profile.firstName}.',
+        Text.rich(
+          TextSpan(
+            text: '${Profile.greeting}\n${Profile.firstName}',
+            children: const [
+              TextSpan(
+                text: '.',
+                style: TextStyle(color: AppColors.accentText),
+              ),
+            ],
+          ),
           style: displayStyle(nameSize),
         ),
         const SizedBox(height: 20),
@@ -109,7 +117,7 @@ class _HeroText extends StatelessWidget {
   }
 }
 
-/// Parses **bold** segments: bold = white, rest = muted.
+/// Parses **bold** segments: bold = blue accent, rest = muted.
 class _RichTagline extends StatelessWidget {
   const _RichTagline(this.source);
 
@@ -131,7 +139,7 @@ class _RichTagline extends StatelessWidget {
               text: parts[i],
               style: i.isOdd
                   ? const TextStyle(
-                      color: AppColors.text,
+                      color: AppColors.accentText,
                       fontWeight: FontWeight.w700,
                     )
                   : null,
