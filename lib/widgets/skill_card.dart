@@ -224,14 +224,14 @@ class _CardFront extends StatelessWidget {
           ),
           const SizedBox(height: 28),
           Container(
-            width: 60,
-            height: 60,
+            width: 108,
+            height: 108,
             decoration: BoxDecoration(
               color: Colors.white.withValues(alpha: 0.04),
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(26),
               border: Border.all(color: AppColors.line),
             ),
-            child: Icon(skill.icon, size: 30, color: AppColors.text),
+            child: Icon(skill.icon, size: 56, color: AppColors.text),
           )
               .animate(target: isActive ? 1 : 0)
               .scaleXY(begin: 0.88, end: 1, curve: Curves.easeOutBack),
