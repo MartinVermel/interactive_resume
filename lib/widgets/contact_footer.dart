@@ -110,6 +110,14 @@ class ContactFooter extends StatelessWidget {
                       const SizedBox(height: 6),
                       Text('© ${Profile.year} ${Profile.name}',
                           style: monoStyle(size: 11)),
+                      const SizedBox(height: 6),
+                      _HoverText(
+                        label: 'Built with Flutter ↗',
+                        onTap: () => _open(
+                            'https://github.com/MartinVermel/interactive_resume'),
+                        mono: true,
+                        size: 13,
+                      ),
                     ],
                   ),
                 ],
