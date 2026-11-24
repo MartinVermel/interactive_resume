@@ -138,4 +138,23 @@ const List<Skill> skills = [
       'GitHub Pages',
     ],
   ),
+  Skill(
+    title: 'Prompt Engineering',
+    subtitle: 'AI agents · LLMs',
+    icon: Icons.auto_awesome_rounded,
+    color: Color(0xFFC99A2E),
+    description:
+        'I use AI coding agents as part of my daily workflow: reusable skills '
+        'that package instructions for recurring tasks, MCP servers that '
+        'connect the agent to docs, browsers and other tools, and multi-agent '
+        'prompting where sub-agents plan, build and review in parallel. I '
+        'always check and test what they produce.',
+    highlights: [
+      'Prompt design',
+      'Agent skills',
+      'MCP',
+      'Multi-agent',
+      'Context management',
+    ],
+  ),
 ];
